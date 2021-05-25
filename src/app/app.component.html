@@ -3,12 +3,8 @@
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <div class="row center">
-      <ng-container *ngFor="let product of merch">
-        <app-product [product]="product"></app-product>
-      </ng-container>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
 <app-footer></app-footer>
-<router-outlet></router-outlet>
