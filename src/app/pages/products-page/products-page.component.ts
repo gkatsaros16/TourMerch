@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DataStoreService } from 'src/app/services/data-store.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { DataStoreService } from 'src/app/services/data-store.service';
 export class ProductsPageComponent implements OnInit {
   merch$;
   constructor(
-    private ds: DataStoreService
+    private ds: DataStoreService,
+    private route: ActivatedRoute
   ) { 
-    this.merch$ = this.ds.merch$;
+    this.ds.bandId$.next(this.route.snapshot.paramMap.get('id'));
+    this.merch$ = this.ds.getMerch();
   }
 
   ngOnInit(): void {

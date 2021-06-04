@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataStoreService {
+  merchId$ = new BehaviorSubject("");
+  bandId$ = new BehaviorSubject("");
   product$ = new BehaviorSubject({});
   cart$ = new BehaviorSubject([]);
   cartCount$ = new BehaviorSubject('');
-  constructor() {  
+  constructor(
+    private api: ApiService
+  ) {  
     this.getCart()
    }
 
@@ -24,6 +30,18 @@ export class DataStoreService {
     var cart = JSON.parse(localStorage.getItem('cart'))
     this.cart$.next(cart);
     this.cartCount$.next(cart.length);
+   }
+
+   getBands() {
+     return this.api.getBands();
+   }
+
+   getMerch() {
+     return this.api.getMerch(this.bandId$.value);
+   }
+
+   getMerchById() {
+     return this.api.getMerchById(this.merchId$.value);
    }
 
 

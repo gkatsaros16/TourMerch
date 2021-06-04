@@ -1,4 +1,7 @@
-<a routerLink="vein">
-    <img class="responsive-img" src="../../../assets/logos/VEIN_2048x.png" style="height: 100px;">
-</a>
+<ng-container *ngFor="let band of (bands$ | async)">
+    <a routerLink="{{'./band/' + band.id}}" style="padding: 10px">
+        <img class="responsive-img" [src]="band.logo" style="height: 100px;">
+    </a>
+</ng-container>
+
 

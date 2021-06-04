@@ -7,8 +7,8 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
-  { path: 'vein', component: ProductsPageComponent},
-  { path: 'vein/:item', component: ProductDetailPageComponent},
+  { path: 'band/:id', component: ProductsPageComponent},
+  { path: 'merch/:id', component: ProductDetailPageComponent},
   { path: 'cart', component: CartPageComponent},
 ];
 

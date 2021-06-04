@@ -10,16 +10,12 @@ import { DataStoreService } from 'src/app/services/data-store.service';
 export class ProductDetailComponent implements OnInit {
   product$
   constructor(
-    private ds: DataStoreService,
-    private route: ActivatedRoute
+    private ds: DataStoreService
   ) { 
-    this.product$ = this.ds.product$;
+    this.product$ = this.ds.getMerchById();
   }
 
   ngOnInit(): void {
-    //if going to page by url/refresh page find product by item name
-    if (!this.product$.value.item) {
-      this.product$.next(this.ds.merch$.value.find(x => x.item == this.route.snapshot.paramMap.get('item')));
-    }
+
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataStoreService } from 'src/app/services/data-store.service';
 
 @Component({
   selector: 'app-product-page',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private ds: DataStoreService,
+    private route: ActivatedRoute
+  ) { 
+    this.ds.merchId$.next(this.route.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit(): void {
   }

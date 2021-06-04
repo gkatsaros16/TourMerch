@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStoreService } from 'src/app/services/data-store.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
-  constructor() { }
+  bands$;
+  constructor(private ds: DataStoreService) { 
+    this.bands$ = this.ds.getBands();
+  }
 
   ngOnInit(): void {
   }
