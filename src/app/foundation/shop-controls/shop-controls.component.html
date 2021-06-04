@@ -1,24 +1,23 @@
-<div class="input-field col s2">
-    <select>
-        <option value="" disabled selected>Choose your option</option>
-        <option value="1">XS</option>
-        <option value="2">S</option>
-        <option value="3">M</option>
-        <option value="4">L</option>
-        <option value="5">XL</option>
+<div class="input-field col s3">
+    <select [(ngModel)]="size">
+        <option value="" disabled selected></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
     </select>
     <label>Select Size</label>
 </div>
-<!-- <div class="input-field col s12">
-    <select>
-        <option value="" disabled selected>Choose your option</option>
+<div class="input-field col s2">
+    <select [(ngModel)]="qty">
+        <option value="" disabled selected>0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
     </select>
-    <label>Select Qty</label>
-</div> -->
-
-
+    <label>Qty</label>
+</div>
+<div class="col s12">
+    <a class="waves-effect waves-light blue lighten-1 btn" (click)="addToCart()">Add To Cart</a>
+</div>

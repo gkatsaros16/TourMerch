@@ -1,0 +1,14 @@
+<div *ngIf="(product$ | async) as product">
+    <div class="col s6">
+        <img class="responsive-img" [src]="product.src" style="height: 500px;">
+    </div>
+    <div class="col s6">
+        <h1>{{product.band}} - {{product.item}}</h1>
+        <div>
+            <h6>{{product.description}}</h6>
+            <h4>${{product.price}}</h4>
+        </div>
+        <app-shop-controls></app-shop-controls>
+    </div>
+</div>
+

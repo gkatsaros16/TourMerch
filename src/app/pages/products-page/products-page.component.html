@@ -1,0 +1,6 @@
+<div class="center" >
+    <ng-container *ngFor="let product of (merch$ | async)">
+        <app-product [product]="product"></app-product>
+    </ng-container>
+</div>
+

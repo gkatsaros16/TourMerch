@@ -1,7 +1,24 @@
 <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" routerLink="" class="brand-logo">Tour Merch</a>
         <ul class="right hide-on-med-and-down">
-        <li><a href="https://twitch.com/ghoulboy"><i style="font-size: 28px" class="fa fa-shopping-cart"></i></a></li>    
+        <li style="position:relative">
+            <a routerLink="/cart"><i style="font-size: 28px" class="fa fa-shopping-cart">
+                <span *ngIf="(cartCount$ | async) as count" class="number-circle" style="
+                    position: absolute;
+                    top: 13px;
+                    left: 33px;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    padding: 1px;
+                    background: red;
+                    border: 2px solid white;
+                    color: white;
+                    text-align: center;
+                    font: 12px Arial, sans-serif;">{{count}}
+                </span></i>
+            </a>
+        </li>    
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
