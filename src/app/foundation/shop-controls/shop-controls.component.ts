@@ -21,8 +21,7 @@ export class ShopControlsComponent implements OnInit {
   }
 
   addToCart() {
-    var product = this.ds.product$.value;
-    this.ds.cart$.next([...this.ds.cart$.value, {product, size: this.size, qty: this.qty}])
+    this.ds.cart$.next([...this.ds.cart$.value, {merchId: this.ds.merchId$.value, size: this.size, qty: this.qty}])
     this.ds.updateCart();
   }
 }
