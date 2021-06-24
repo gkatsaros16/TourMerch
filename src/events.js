@@ -60,7 +60,6 @@ function createRouter(db) {
           console.log(error);
           res.status(500).json({status: 'error'});
         } else {
-          console.log(results)
           res.status(200).json(results[0]);
         }
       }
