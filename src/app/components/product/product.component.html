@@ -1,5 +1,7 @@
 <div class="col s3" routerLink="{{'../../merch/' + product.id}}">
-    <img class="responsive-img" [src]="product.picture" style="height: 250px;">
+    <div class="product">
+      <img class="responsive-img clickable zoom" [src]="product.picture" style="height: 250px;">  
+    </div>   
     <div>
         <div>{{product.name}} - {{product.item}}</div>
         <div>{{product.description}}</div>

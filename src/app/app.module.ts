@@ -14,6 +14,7 @@ import { ShopControlsComponent } from './foundation/shop-controls/shop-controls.
 import { FormsModule } from '@angular/forms';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { CartComponent } from './components/cart/cart.component';
+import { BackButtonComponent } from './foundation/back-button/back-button.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CartComponent } from './components/cart/cart.component';
     ProductDetailComponent,
     ShopControlsComponent,
     CartPageComponent,
-    CartComponent
+    CartComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,

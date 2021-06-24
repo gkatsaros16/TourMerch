@@ -1,6 +1,6 @@
 <div *ngIf="(product$ | async) as product">
-    <div class="col s6">
-        <img class="responsive-img" [src]="product.picture" style="height: 500px;">
+    <div class="col s6 product">
+        <img class="responsive-img zoom" [src]="product.picture" style="height: 500px;">
     </div>
     <div class="col s6">
         <h1>{{product.name}} - {{product.item}}</h1>

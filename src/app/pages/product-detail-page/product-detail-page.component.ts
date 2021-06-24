@@ -8,7 +8,6 @@ import { DataStoreService } from 'src/app/services/data-store.service';
   styleUrls: ['./product-detail-page.component.scss']
 })
 export class ProductDetailPageComponent implements OnInit {
-
   constructor(
     private ds: DataStoreService,
     private route: ActivatedRoute

@@ -7,15 +7,17 @@
         <span class="col s2">Price</span>
     </div>
     <div class="row" *ngFor="let item of (cart$ | async)">
-        <div class="col s3">
-            <img class="responsive-img" [src]="item.product.src" style="height: 100px; width: 100px;">
-        </div>
-        <div class="col s3">{{item.product.item}}</div>
-        <div class="col s2">{{item.size}}</div>
-        <div class="col s2">{{item.qty}}</div>
-        <div class="col s2">{{item.product.price}}</div>
+        <ng-container *ngIf="getMerch(item)">
+            <div class="col s3 product">
+                <img class="responsive-img zoom" [src]="item.product?.picture" style="height: 100px; width: 100px;">
+            </div>
+            <div class="col s3">{{item.product?.item}}</div>
+            <div class="col s2">{{item.size}}</div>
+            <div class="col s2">{{item.qty}}</div>
+            <div class="col s2">{{item.product?.price}}</div>
+        </ng-container>
     </div>
     <hr>
     <div class="col s10"></div>
-    <div class="col s2">{{ getTotal() }}</div>
+    <div class="col s2">{{ total }}</div>
 </div>

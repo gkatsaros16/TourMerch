@@ -44,6 +44,10 @@ export class DataStoreService {
      return this.api.getMerchById(this.merchId$.value);
    }
 
+   getMerchFromId(id) {
+    return this.api.getMerchById(id);
+  }
+
 
 
 
